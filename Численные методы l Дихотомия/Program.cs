@@ -20,7 +20,7 @@
                 Console.WriteLine("Введите конец промежутка (b): ");
                 endGapB = IsNumber(Console.ReadLine());
 
-                Calculations(accuracy, startGapA, endGapB);
+                Calculations(accuracy, startGapA, endGapB, (startGapA + endGapB) / 2);
 
                 Console.ReadLine();
             }
@@ -49,11 +49,9 @@
             }
         }
 
-        static void Calculations(double accuracy, double startGapA, double endGapB)
+        static void Calculations(double accuracy, double startGapA, double endGapB, double x)
         {
-            double x, fa, fx, fa_x_fx;
-
-            x = (startGapA + endGapB) / 2;
+            double fa, fx, fa_x_fx;
 
             fa = Math.Pow(2, startGapA) - 5 * startGapA - 3;
             fx = Math.Pow(2, x) - 5 * x - 3;
@@ -82,7 +80,7 @@
                 startGapA = x;
             }
             
-            Calculations(accuracy, startGapA, endGapB);
+            Calculations(accuracy, startGapA, endGapB, x);
         }
     }
 }
