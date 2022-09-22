@@ -72,10 +72,14 @@
                 Console.WriteLine("\t----------");
             }
 
+            if(fa_x_fx < 0)
+            {
+                endGapB = startGapA;
+            }
+
             if(fa_x_fx > 0)
             {
-                startGapA = endGapB;
-                endGapB = x;
+                startGapA = x;
             }
             
             Calculations(accuracy, startGapA, endGapB);
