@@ -7,28 +7,37 @@
             while (true)
             {
                 Console.Clear();
-                int accuracy, startGapA, endGapB;
+                double startGapA, endGapB, accuracy;
 
                 Console.WriteLine("\t\t\tМетод дихотомии:");
                 Console.WriteLine("Пример: 2^x - 5*x - 3");
                 Console.WriteLine("Введите точность: ");
-                accuracy = IsNumber(Console.ReadLine());
+                accuracy = AccuracyChecker(Console.ReadLine());//!cвой метод!!!
 
                 Console.WriteLine("Введите начало промежутка (a): ");
-                startGapA = IsNumber(Console.ReadLine());
+                startGapA = AccuracyChecker(Console.ReadLine());
 
                 Console.WriteLine("Введите конец промежутка (b): ");
                 endGapB = IsNumber(Console.ReadLine());
 
-                int intX = IsX(startGapA, endGapB);
-                FX(intX);
-                FA(startGapA);
+                Calculations(accuracy, startGapA, endGapB);
 
                 Console.ReadLine();
             }
         }
 
-        static int IsNumber(string str)
+        static double AccuracyChecker(string str)
+        {
+            if (double.TryParse(str, out double result))
+            {
+                return result;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+        static int IsNumber(string str)//!
         {
             if (int.TryParse(str, out int result))
             {
@@ -40,44 +49,36 @@
             }
         }
 
-        static int IsX(int a, int b)
+        static void Calculations(double accuracy, double startGapA, double endGapB)
         {
-            int result = (a + b) / 2;
-            Console.Write($"X: {result}\t");
-            return result;
-        }
+            double x, fa, fx, fa_x_fx;
 
-        static int FA(int a)
-        {
-            int result = 2^a - 5 * a - 3;
-            Console.Write($"F(a): {result}\t");
-            return result;
-        }
+            x = (startGapA + endGapB) / 2;
 
-        static int FX(int x)
-        {
-            int result = 2 ^ x - 5 * x - 3;
-            Console.Write($"F(x): {result}\t");
-            return result;
-        }
+            fa = Math.Pow(2, startGapA) - 5 * startGapA - 3;
+            fx = Math.Pow(2, x) - 5 * x - 3;
 
-        static int FAxFX(int fa, int fx)
-        {
-            int result = fa * fx;
-            Console.Write($"{result}\t");
-            return result;
-        }
-        
-        static void AccuracyCheck(int accuracy, int input)
-        {
-            if (input <= accuracy)
+            fa_x_fx = fa * fx;
+
+            Console.Write($"F(a): {fa}\tF(x): {fx}\tF(a)*F(x): {fa_x_fx}");
+
+            if (Math.Abs(fx) < accuracy) //!
             {
-                Console.WriteLine("Выполнено!");
+                Console.WriteLine("\tРезультат получен!");
+                return;
             }
             else
             {
-                Console.WriteLine("---------");
+                Console.WriteLine("\t----------");
             }
+
+            if(fa_x_fx > 0)
+            {
+                startGapA = endGapB;
+                endGapB = x;
+            }
+            
+            Calculations(accuracy, startGapA, endGapB);
         }
     }
 }
