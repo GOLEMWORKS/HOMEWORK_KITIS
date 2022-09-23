@@ -18,7 +18,7 @@
                 startGapA = AccuracyChecker(Console.ReadLine());
 
                 Console.WriteLine("Введите конец промежутка (b): ");
-                endGapB = IsNumber(Console.ReadLine());
+                endGapB = AccuracyChecker(Console.ReadLine());
 
                 Calculations(accuracy, startGapA, endGapB, (startGapA + endGapB) / 2);
 
@@ -37,17 +37,17 @@
                 return 1;
             }
         }
-        static int IsNumber(string str)//!
-        {
-            if (int.TryParse(str, out int result))
-            {
-                return result;
-            }
-            else
-            {
-                return 0;
-            }
-        }
+        //static int IsNumber(string str)//!
+        //{
+        //    if (int.TryParse(str, out int result))
+        //    {
+        //        return result;
+        //    }
+        //    else
+        //    {
+        //        return 0;
+        //    }
+        //}
 
         static void Calculations(double accuracy, double startGapA, double endGapB, double x)
         {
@@ -72,14 +72,16 @@
 
             if(fa_x_fx < 0)
             {
-                endGapB = startGapA;
+                endGapB = x;
+                //startGapA = startGapA;
             }
-
-            if(fa_x_fx > 0)
+            else
             {
+                //endGapB = endGapB;
                 startGapA = x;
             }
-            
+
+            x = (startGapA + endGapB)/2;
             Calculations(accuracy, startGapA, endGapB, x);
         }
     }
