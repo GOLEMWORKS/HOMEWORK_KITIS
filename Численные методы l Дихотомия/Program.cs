@@ -37,18 +37,7 @@
                 return 1;
             }
         }
-        //static int IsNumber(string str)//!
-        //{
-        //    if (int.TryParse(str, out int result))
-        //    {
-        //        return result;
-        //    }
-        //    else
-        //    {
-        //        return 0;
-        //    }
-        //}
-
+        
         static void Calculations(double accuracy, double startGapA, double endGapB, double x)
         {
             double fa, fx, fa_x_fx;
@@ -60,7 +49,7 @@
 
             Console.Write($"F(a): {fa}\tF(x): {fx}\tF(a)*F(x): {fa_x_fx}");
 
-            if (Math.Abs(fx) < accuracy) //!
+            if (Math.Abs(fx) < accuracy) 
             {
                 Console.WriteLine("\tРезультат получен!");
                 return;
