@@ -12,7 +12,7 @@
                 Console.WriteLine("\t\t\tМетод дихотомии:");
                 Console.WriteLine("Пример: 2^x - 5*x - 3");
                 Console.WriteLine("Введите точность: ");
-                accuracy = AccuracyChecker(Console.ReadLine());//!cвой метод!!!
+                accuracy = AccuracyChecker(Console.ReadLine());
 
                 Console.WriteLine("Введите начало промежутка (a): ");
                 startGapA = AccuracyChecker(Console.ReadLine());
@@ -62,11 +62,9 @@
             if(fa_x_fx < 0)
             {
                 endGapB = x;
-                //startGapA = startGapA;
             }
             else
             {
-                //endGapB = endGapB;
                 startGapA = x;
             }
 
