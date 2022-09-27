@@ -56,14 +56,15 @@
             fx = Math.Pow(3, x) - Math.Cos(x);
 
             //Сделано по блок-схеме из pril5
-            Console.Write($"F(A): {fa}   F(B): {fb}   X: {x}    F(X) {fx}");
+            //Разкломентить ниже для лога рассчёта
+            //Console.Write($"F(A): {fa}   F(B): {fb}   X: {x}    F(X) {fx}"); 
             if (fx * fa < 0)
             {
-                end = x;
+                beg = x;
             }
             else
             {
-                beg = x;
+                end = x;
             }
 
             if (Math.Abs(x - c) < accuracy)
