@@ -45,7 +45,35 @@
 
         static void Calculations(double beg, double end, double accuracy = 0.0001, double x = 0)
         {
-            
+            double fa, fb, fx, abs, c;
+
+            c = x;
+
+            fa = Math.Pow(3,beg) - Math.Cos(beg);
+            fb = Math.Pow(3,end) - Math.Cos(end);
+
+            x = beg - (end - beg) * fa/(fb - fa);
+            fx = Math.Pow(3, x) - Math.Cos(x);
+
+            //Сделано по блок-схеме из pril5
+            Console.Write($"F(A): {fa}   F(B): {fb}   X: {x}    F(X) {fx}");
+            if (fx * fa < 0)
+            {
+                end = x;
+            }
+            else
+            {
+                beg = x;
+            }
+
+            if (Math.Abs(x - c) < accuracy)
+            {
+                Console.WriteLine($"X: {x}");
+            }
+            else
+            {
+                Calculations(beg, end, accuracy, x);
+            }
         }
     }
 }
