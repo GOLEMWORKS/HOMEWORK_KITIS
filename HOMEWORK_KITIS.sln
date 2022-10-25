@@ -5,7 +5,9 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Численные методы l Дихотомия", "Численные методы l Дихотомия\Численные методы l Дихотомия.csproj", "{CB9A0557-41BD-4C34-92E6-10E272F934D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Численные методы l Метод хорд", "Численные методы l Метод хорд\Численные методы l Метод хорд.csproj", "{257372D9-D1CC-4024-88CF-5B70C679E761}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Численные методы l Метод хорд", "Численные методы l Метод хорд\Численные методы l Метод хорд.csproj", "{257372D9-D1CC-4024-88CF-5B70C679E761}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Численные методы l Вычисление по формуле Симпсона", "Численные методы l Вычисление по формуле Симпсона\Численные методы l Вычисление по формуле Симпсона.csproj", "{473A3CEC-F1F0-41FA-A703-0A33E0DA00B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{257372D9-D1CC-4024-88CF-5B70C679E761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{257372D9-D1CC-4024-88CF-5B70C679E761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{257372D9-D1CC-4024-88CF-5B70C679E761}.Release|Any CPU.Build.0 = Release|Any CPU
+		{473A3CEC-F1F0-41FA-A703-0A33E0DA00B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{473A3CEC-F1F0-41FA-A703-0A33E0DA00B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{473A3CEC-F1F0-41FA-A703-0A33E0DA00B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{473A3CEC-F1F0-41FA-A703-0A33E0DA00B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
